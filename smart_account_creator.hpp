@@ -60,8 +60,9 @@ struct call {
     void buyram(account_name buyer, account_name receiver, asset tokens);
   };
 };
+
 asset buyrambytes(uint32_t bytes) {
-  rammarket market(N(enumivo), N(enumivo));
+  enumivosystem::rammarket market(N(enumivo), N(enumivo));
   auto itr = market.find(S(4, RAMCORE));
   enumivo_assert(itr != market.end(), "RAMCORE market not found");
   auto tmp = *itr;
