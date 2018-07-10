@@ -4,9 +4,9 @@
 #include <enulib/currency.hpp>
 #include <enulib/enu.hpp>
 #include <enulib/public_key.hpp>
-#include <includes/enu.token.hpp>
-#include <includes/exchange_state.cpp>
-#include <includes/exchange_state.hpp>
+#include <enu.token/enu.token.hpp>
+#include <enu.system/exchange_state.cpp>
+#include <enu.system/exchange_state.hpp>
 #include "abienu_numeric.hpp"
 
 
