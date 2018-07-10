@@ -4,10 +4,10 @@
 #include <enulib/currency.hpp>
 #include <enulib/enu.hpp>
 #include <enulib/public_key.hpp>
-#include "includes/enu.token.hpp"
-#include "includes/exchange_state.cpp"
-#include "includes/exchange_state.hpp"
-#include "includes/abienu_numeric.hpp"
+#include <includes/enu.token.hpp>
+#include <includes/exchange_state.cpp>
+#include <includes/exchange_state.hpp>
+#include "abienu_numeric.hpp"
 
 
 namespace enumivo {
