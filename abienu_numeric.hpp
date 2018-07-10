@@ -63,7 +63,6 @@ Key string_to_key(std::string_view s, key_type type, const char (&suffix)[suffix
     return result;
 }
 
-
 public_key string_to_public_key(std::string_view s) {
     if (s.size() >= 3 && s.substr(0, 3) == "ENU") {
         auto whole = base58_to_binary<37>(s.substr(3));
