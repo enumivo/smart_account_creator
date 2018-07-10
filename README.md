@@ -27,10 +27,6 @@ When you withdraw your ENU to the accountcreat smart contract, it will perform t
 1. Create a new account using your specified name, owner key and active key
 1. Buy 4KB of RAM for your new account with parts of the transferred ENU. Every account that is created on the ENU network needs 4 KB of RAM to exist.
 1. Delegate and transfer 0.1 ENU for CPU and 0.1 ENU for NET.
-1. Deduct our fee of 0.5% or a minimum of 0.1 ENU and forward the remaining ENU balance to your new account.
 
 Should any of the above actions fail, the transaction will be rolled back which 
 means the money will automatically be refunded to you.
-
-## Peer reviews
-If you want to review the code, that would be great. It's important for the community to have peer-reviewed, trusted, account creation smart contract code. Quick note to anyone wanting to verify the deployment (as there is no such things as etherscan yet, where you can upload the code): The code currently deployed on ```accountcreat``` is compiled with ```-Oz``` to save RAM.

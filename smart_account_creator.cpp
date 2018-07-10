@@ -96,22 +96,22 @@ public:
 
 // ENUMIVO_ABI(sac, (transfer))
 
-#define ENUMIVO_ABI_EX(TYPE, MEMBERS)                                            \
-  extern "C" {                                                                 \
-  void apply(uint64_t receiver, uint64_t code, uint64_t action) {              \
-    if (action == N(onerror)) {                                                \
-      /* onerror is only valid if it is for the "enumivo" code account and       \
-       * authorized by "enumivo"'s "active permission */                         \
+#define ENUMIVO_ABI_EX(TYPE, MEMBERS)                                              \
+  extern "C" {                                                                     \
+  void apply(uint64_t receiver, uint64_t code, uint64_t action) {                  \
+    if (action == N(onerror)) {                                                    \
+      /* onerror is only valid if it is for the "enumivo" code account and         \
+       * authorized by "enumivo"'s "active permission */                           \
       enumivo_assert(code == N(enumivo), "onerror action's are only valid from "   \
-                                     "the \"enumivo\" system account");          \
-    }                                                                          \
-    auto self = receiver;                                                      \
-    if (code == self || code == N(enu.token) || action == N(onerror)) {      \
-      TYPE thiscontract(self);                                                 \
-      switch (action) { ENUMIVO_API(TYPE, MEMBERS) }                             \
-      /* does not allow destructor of thiscontract to run: enumivo_exit(0); */   \
-    }                                                                          \
-  }                                                                            \
+                                     "the \"enumivo\" system account");            \
+    }                                                                              \
+    auto self = receiver;                                                          \
+    if (code == self || code == N(enu.token) || action == N(onerror)) {            \
+      TYPE thiscontract(self);                                                     \
+      switch (action) { ENUMIVO_API(TYPE, MEMBERS) }                               \
+      /* does not allow destructor of thiscontract to run: enumivo_exit(0); */     \
+    }                                                                              \
+  }                                                                                \
   }
 
 ENUMIVO_ABI_EX(sac, (transfer))
