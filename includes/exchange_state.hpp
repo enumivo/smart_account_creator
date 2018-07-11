@@ -1,11 +1,11 @@
 #pragma once
 
-#include <eosiolib/asset.hpp>
+#include <enulib/asset.hpp>
 
-namespace eosio {
+namespace enumivo {
    
-   using eosio::asset;
-   using eosio::symbol_type;
+   using enumivo::asset;
+   using enumivo::symbol_type;
 
    typedef double real_type;
 
@@ -21,7 +21,7 @@ namespace eosio {
          asset balance;
          double weight = .5;
 
-         EOSLIB_SERIALIZE( connector, (balance)(weight) )
+         ENULIB_SERIALIZE( connector, (balance)(weight) )
       };
 
       connector base;
@@ -33,9 +33,9 @@ namespace eosio {
       asset convert_from_exchange( connector& c, asset in );
       asset convert( asset from, symbol_type to );
 
-      EOSLIB_SERIALIZE( exchange_state, (supply)(base)(quote) )
+      ENULIB_SERIALIZE( exchange_state, (supply)(base)(quote) )
    };
 
-   typedef eosio::multi_index<N(rammarket), exchange_state> rammarket;
+   typedef enumivo::multi_index<N(rammarket), exchange_state> rammarket;
 
-} /// namespace eosiosystem
+} /// namespace enumivosystem
