@@ -15,7 +15,7 @@ public:
     }
     
     // don't do anything on transfers from our reference account
-    if (transfer.from == N(ge4dknjtgqge)) {
+    if (transfer.from == N(aiden.pearce)) {
       return;
     }
     
