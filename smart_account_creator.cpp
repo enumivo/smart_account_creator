@@ -104,7 +104,7 @@ public:
 
 // ENUIO_ABI(sac, (transfer))
 
-#define ENUIO_ABI_EX(TYPE, MEMBERS)                                            \
+#define ENUMIVO_ABI_EX(TYPE, MEMBERS)                                            \
   extern "C" {                                                                 \
   void apply(uint64_t receiver, uint64_t code, uint64_t action) {              \
     if (action == N(onerror)) {                                                \
@@ -116,9 +116,9 @@ public:
     auto self = receiver;                                                      \
     if (code == self || code == N(enu.token) || action == N(onerror)) {        \
       TYPE thiscontract(self);                                                 \
-      switch (action) { ENUIO_API(TYPE, MEMBERS) }                             \
+      switch (action) { ENUMIVO_API(TYPE, MEMBERS) }                             \
     }                                                                          \
   }                                                                            \
   }
 
-ENUIO_ABI_EX(sac, (transfer))
+ENUMIVO_ABI_EX(sac, (transfer))
