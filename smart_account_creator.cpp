@@ -121,4 +121,4 @@ public:
   }                                                                            \
   }
 
-ENUMIVO_ABI_EX(sac, (transfer))
+ENUMIVO_ABI(sac, (transfer))
